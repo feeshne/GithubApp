@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/navigation_search"
-        android:name="com.wentao.githubapp.ui.dashboard.DashboardFragment"
+        android:name="com.wentao.githubapp.ui.search.SearchFragment"
         android:label="@string/title_search"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_search" />
 
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.wentao.githubapp.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_profile" />
 </navigation>
