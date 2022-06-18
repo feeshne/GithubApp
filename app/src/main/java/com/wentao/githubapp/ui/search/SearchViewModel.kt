@@ -1,13 +1,13 @@
-package com.wentao.githubapp.ui.dashboard
+package com.wentao.githubapp.ui.search
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import com.wentao.githubapp.ui.BaseViewModel
 
-class DashboardViewModel : ViewModel() {
+class SearchViewModel : BaseViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
+        value = "This is search Fragment"
     }
     val text: LiveData<String> = _text
 }
