@@ -57,4 +57,8 @@ dependencies {
     //glide
     implementation 'com.github.bumptech.glide:glide:4.13.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
+
+    //permission
+//    implementation 'implementation "com.google.accompanist:accompanist-permissions:0.24.9'
+    implementation 'androidx.activity:activity-compose:1.6.0-alpha05'
 }
