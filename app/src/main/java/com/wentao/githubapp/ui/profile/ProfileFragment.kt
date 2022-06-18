@@ -1,17 +1,16 @@
 package com.wentao.githubapp.ui.profile
 
 import android.os.Bundle
-import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.wentao.githubapp.R
 import com.wentao.githubapp.databinding.FragmentProfileBinding
-import com.wentao.githubapp.network.NetworkManager
+import com.wentao.githubapp.image.ImageHelper
 import com.wentao.githubapp.network.Resource
 import com.wentao.githubapp.ui.BaseFragment
-import com.wentao.githubapp.ui.profile.model.UserRepository
 
 
 class ProfileFragment : BaseFragment() {
@@ -47,6 +46,7 @@ class ProfileFragment : BaseFragment() {
                 binding.textUserName.visibility = View.VISIBLE
                 binding.textUserPass.visibility = View.VISIBLE
                 binding.buttonLogin.text = "Login"
+                binding.imageAvatar.setImageDrawable(null)
             }
 
         }
@@ -70,6 +70,9 @@ class ProfileFragment : BaseFragment() {
                     binding.textUserPass.visibility = View.GONE
                     binding.buttonLogin.text = "Login Out"
                     profileViewModel.isLogin = true
+
+                    // show avatar
+                    ImageHelper.showImage(binding.imageAvatar, it.data?.avatarUrl)
                 } else {
                     showErrorDialog()
                 }

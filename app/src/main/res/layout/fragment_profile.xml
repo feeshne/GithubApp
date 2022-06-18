@@ -21,22 +21,22 @@
         android:layout_width="wrap_content"
         android:layout_height="42dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="50dp"
         android:ems="10"
         android:hint="user"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.225"
         app:layout_constraintStart_toEndOf="@+id/text_user_name"
         app:layout_constraintTop_toBottomOf="@+id/image_avatar" />
 
     <ImageView
         android:id="@+id/image_avatar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="81dp"
-        android:src="@drawable/ic_baseline_face_24"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/ic_baseline_face"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="50dp"
         android:text="用户名："
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_avatar" />
@@ -64,7 +64,7 @@
         android:hint="password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toEndOf="@+id/text_user_pass"
         app:layout_constraintTop_toBottomOf="@+id/input_user_name" />
 
