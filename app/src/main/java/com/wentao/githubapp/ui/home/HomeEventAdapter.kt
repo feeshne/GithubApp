@@ -1,15 +1,17 @@
-package com.wentao.githubapp.ui.search
+package com.wentao.githubapp.ui.home
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.wentao.githubapp.R
-import com.wentao.githubapp.ui.search.model.ItemsViewModel
+import com.wentao.githubapp.ui.home.model.ItemsViewModel
 
-class RepoSearchAdapter :
-    RecyclerView.Adapter<RepoSearchAdapter.ViewHolder>() {
+class HomeEventAdapter :
+    RecyclerView.Adapter<HomeEventAdapter.ViewHolder>() {
 
     var mList: List<ItemsViewModel> = arrayListOf()
 
@@ -23,7 +25,7 @@ class RepoSearchAdapter :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.repo_card_view, parent, false)
+            .inflate(R.layout.event_card_view, parent, false)
 
         return ViewHolder(view)
     }
@@ -34,9 +36,9 @@ class RepoSearchAdapter :
         }
         val itemsViewModel = mList[position]
 
-        holder.repoNameText.text = itemsViewModel.repoName
-        holder.repoDescText.text = itemsViewModel.desc
-
+        holder.eventAuthorText.text = itemsViewModel.authorName
+        holder.eventDescText.text = itemsViewModel.desc
+        Glide.with(holder.authorAvatar).load(itemsViewModel.avatar).into(holder.authorAvatar)
     }
 
     override fun getItemCount(): Int {
@@ -44,7 +46,8 @@ class RepoSearchAdapter :
     }
 
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
-        val repoNameText: TextView = itemView.findViewById(R.id.text_repo_name)
-        val repoDescText: TextView = itemView.findViewById(R.id.text_repo_desc)
+        val eventAuthorText: TextView = itemView.findViewById(R.id.text_event_author)
+        val eventDescText: TextView = itemView.findViewById(R.id.text_event_desc)
+        val authorAvatar: ImageView = itemView.findViewById(R.id.image_avatar)
     }
 }
