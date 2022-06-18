@@ -15,6 +15,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.wentao.githubapp.databinding.ActivityMainBinding
+import com.wentao.githubapp.exception.ExceptionActivity
 import com.wentao.githubapp.permission.PermissionsChecker
 
 class MainActivity : AppCompatActivity() {
@@ -62,6 +63,11 @@ class MainActivity : AppCompatActivity() {
         mChecker = PermissionsChecker(this)
         isRequireCheck = true
 
+        //exception
+        Thread.setDefaultUncaughtExceptionHandler { _, _ ->
+            // 异常捕获
+            startActivity(Intent(this, ExceptionActivity::class.java))
+        }
     }
 
     override fun onResume() {
