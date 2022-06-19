@@ -12,16 +12,11 @@ import com.wentao.githubapp.ui.profile.model.UserRepository
 class ProfileViewModel : BaseViewModel() {
 
     companion object {
-        val name = "feeshne"
+        val name = "cwt"
         val pass = "123456"
     }
 
     var isLogin: Boolean = false
-
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is notifications Fragment"
-    }
-    val text: LiveData<String> = _text
 
     fun checkUser(name: String, pass: String): Boolean {
         return name == ProfileViewModel.name && pass == ProfileViewModel.pass

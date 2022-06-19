@@ -58,7 +58,7 @@ class ProfileFragment : BaseFragment() {
         _binding = null
     }
 
-    private fun showUserProfile(name: String, pass: String) {
+    fun showUserProfile(name: String, pass: String) {
         if (profileViewModel.checkUser(name, pass)) {
             profileViewModel.user.observe(viewLifecycleOwner) {
                 if (it.status == Resource.Status.SUCCESS) {

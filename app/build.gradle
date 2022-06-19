@@ -67,5 +67,7 @@ dependencies {
     // debugImplementation because LeakCanary should only run in debug builds.
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.9.1'
 
-    // 
+    //
+    testImplementation "io.mockk:mockk:1.12.4"
+    testImplementation "io.mockk:mockk-agent-jvm:1.12.4"
 }
