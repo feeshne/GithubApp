@@ -1,13 +1,15 @@
 package com.wentao.githubapp.ui.search
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.wentao.githubapp.network.NetworkManager
+import com.wentao.githubapp.network.Resource
 import com.wentao.githubapp.ui.BaseViewModel
+import com.wentao.githubapp.ui.search.model.RepoRepository
+import com.wentao.githubapp.ui.search.model.RepoSearchResponse
 
 class SearchViewModel : BaseViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is search Fragment"
+    fun getSearchResult(key: String): MutableLiveData<Resource<RepoSearchResponse>> {
+        return RepoRepository(NetworkManager().getApiService()).getRepos(key)
     }
-    val text: LiveData<String> = _text
 }

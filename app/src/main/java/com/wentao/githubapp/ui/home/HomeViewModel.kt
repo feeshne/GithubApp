@@ -1,14 +1,15 @@
 package com.wentao.githubapp.ui.home
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import com.wentao.githubapp.network.NetworkManager
+import com.wentao.githubapp.network.Resource
 import com.wentao.githubapp.ui.BaseViewModel
+import com.wentao.githubapp.ui.home.model.EventResponse
+import com.wentao.githubapp.ui.home.model.HomeRepository
 
 class HomeViewModel : BaseViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+    fun getEvents(): MutableLiveData<Resource<List<EventResponse>>> {
+        return HomeRepository(NetworkManager().getApiService()).getEvents()
     }
-    val text: LiveData<String> = _text
 }

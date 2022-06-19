@@ -45,7 +45,7 @@ class SearchFragment : BaseFragment() {
         binding.buttonSearch.setOnClickListener {
             val key = binding.inputRepoKey.text.toString()
             key.isNotEmpty().let {
-                RepoRepository(NetworkManager().getApiService()).getRepos(key)
+                searchViewModel.getSearchResult(key)
                     .observe(viewLifecycleOwner) { response ->
                         response.data?.let {
                             val list: ArrayList<ItemsViewModel> = arrayListOf()

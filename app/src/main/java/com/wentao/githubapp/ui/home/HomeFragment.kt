@@ -35,7 +35,7 @@ class HomeFragment : BaseFragment() {
         recyclerView.layoutManager = LinearLayoutManager(context)
         val adapter = HomeEventAdapter()
         recyclerView.adapter = adapter
-        HomeRepository(NetworkManager().getApiService()).getEvents()
+        homeViewModel.getEvents()
             .observe(viewLifecycleOwner) { response ->
                 if (response.status == Resource.Status.SUCCESS) {
                     response.data?.let { it ->

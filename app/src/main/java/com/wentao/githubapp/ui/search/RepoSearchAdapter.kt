@@ -11,7 +11,7 @@ import com.wentao.githubapp.ui.search.model.ItemsViewModel
 class RepoSearchAdapter :
     RecyclerView.Adapter<RepoSearchAdapter.ViewHolder>() {
 
-    lateinit var mList: List<ItemsViewModel>
+    var mList: List<ItemsViewModel>  = arrayListOf()
 
     fun setData(list: List<ItemsViewModel>?) {
         if (list == null || list.isEmpty()) {
