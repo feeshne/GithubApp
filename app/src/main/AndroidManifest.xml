@@ -26,6 +26,7 @@
 
         <activity
             android:name=".exception.ExceptionActivity"
+            android:label="错误页面"
             android:process=":exception" />
     </application>
 

@@ -17,6 +17,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.wentao.githubapp.databinding.ActivityMainBinding
 import com.wentao.githubapp.exception.ExceptionActivity
 import com.wentao.githubapp.permission.PermissionsChecker
+import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
 
@@ -66,7 +67,10 @@ class MainActivity : AppCompatActivity() {
         //exception
         Thread.setDefaultUncaughtExceptionHandler { _, _ ->
             // 异常捕获
-            startActivity(Intent(this, ExceptionActivity::class.java))
+            val intent = Intent(this, ExceptionActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intent)
+            exitProcess(0)
         }
     }
 

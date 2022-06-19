@@ -9,8 +9,8 @@ import com.wentao.githubapp.R
 import kotlin.system.exitProcess
 
 class ExceptionActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exception)
         findViewById<Button>(R.id.button_upload).setOnClickListener {
             // 上传崩溃日志到后台
